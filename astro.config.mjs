@@ -9,10 +9,18 @@ import tailwindcss from '@tailwindcss/vite';
 
 // https://astro.build/config
 export default defineConfig({
-  site: 'https://example.com',
+  site: 'https://flirthaus.com', // Update with your actual domain
   integrations: [mdx(), sitemap(), vue()],
+
+  server: {
+    host: '0.0.0.0', // Allow external connections for Coolify
+    port: 4321,
+  },
 
   vite: {
     plugins: [tailwindcss()],
+    server: {
+      allowedHosts: ['.ngrok-free.app', '.ngrok.io'],
+    },
   },
 });

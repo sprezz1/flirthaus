@@ -3,171 +3,469 @@ import BaseHead from '../components/BaseHead.astro';
 import Footer from '../components/Footer.astro';
 import Header from '../components/Header.astro';
 import ScrollAnimation from '../components/ScrollAnimation.astro';
-import AnimationTest from '../components/AnimationTest.astro';
-import PricingCalculator from '../components/PricingCalculator.vue';
 import { SITE_DESCRIPTION, SITE_TITLE } from '../consts';
 ---
 
 <!doctype html>
 <html lang="en">
 	<head>
-		<BaseHead title={SITE_TITLE} description={SITE_DESCRIPTION} />
+		<BaseHead title="FlirtHaus - Premium OnlyFans Chatting Services" description="White-glove OnlyFans management for elite creators and agencies. $20M+ in revenue generated. Experience luxury service that delivers results." />
+		<link rel="preconnect" href="https://fonts.googleapis.com">
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+		<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Playfair+Display:wght@400;700;900&display=swap" rel="stylesheet">
 	</head>
-	<body class="bg-white">
+	<body class="bg-background" style="font-family: 'Inter', sans-serif;">
 		<Header />
 
 		<!-- Hero Section -->
-		<section class="min-h-screen flex items-center justify-center bg-gradient-to-br from-blue-50 to-indigo-100">
-			<div class="max-w-4xl mx-auto px-6 text-center">
-				<ScrollAnimation animation="fadeIn">
-					<h1 class="text-6xl font-bold text-gray-900 mb-6">
-						Welcome to Your Marketing Site
-					</h1>
-				</ScrollAnimation>
-				<ScrollAnimation animation="fadeIn" delay={0.3}>
-					<p class="text-xl text-gray-600 mb-8">
-						Showcase your product with stunning scroll animations and interactive features
-					</p>
-				</ScrollAnimation>
-				<ScrollAnimation animation="scaleUp" delay={0.6}>
-					<a href="#features" class="inline-block bg-indigo-600 text-white px-8 py-4 rounded-lg text-lg font-semibold hover:bg-indigo-700 transition">
-						Get Started
-					</a>
-				</ScrollAnimation>
+		<section class="bg-primary min-h-screen flex items-center justify-center relative overflow-hidden">
+			<!-- Background Pattern -->
+			<div class="absolute inset-0 opacity-5" style="background-image: radial-gradient(circle at 1px 1px, white 1px, transparent 0); background-size: 40px 40px;"></div>
+
+			<div class="container max-w-6xl mx-auto px-6 py-20 relative z-10">
+				<div class="text-center">
+					<ScrollAnimation animation="fadeIn">
+						<span class="badge badge-secondary inline-block mb-6">
+							$20M+ Revenue Generated
+						</span>
+					</ScrollAnimation>
+
+					<ScrollAnimation animation="fadeIn" delay={0.2}>
+						<h1 class="heading-xl mb-6" style="color: white; font-family: 'Playfair Display', serif;">
+							Premium OnlyFans<br/>Chatting Services
+						</h1>
+					</ScrollAnimation>
+
+					<ScrollAnimation animation="fadeIn" delay={0.4}>
+						<p class="text-xl md:text-2xl mb-12 max-w-3xl mx-auto" style="color: #F8F4F0; line-height: 1.7;">
+							White-glove chat management for elite creators and agencies. We don't just respond—we build relationships that convert.
+						</p>
+					</ScrollAnimation>
+
+					<ScrollAnimation animation="scaleUp" delay={0.6}>
+						<div class="flex flex-col sm:flex-row gap-4 justify-center items-center">
+							<a href="#contact" class="btn btn-primary btn-lg">
+								Get Started
+							</a>
+							<a href="#how-it-works" class="btn btn-secondary btn-lg">
+								See How It Works
+							</a>
+						</div>
+					</ScrollAnimation>
+
+					<ScrollAnimation animation="fadeIn" delay={0.8}>
+						<div class="mt-16 flex flex-wrap justify-center gap-8 md:gap-16 items-center" style="opacity: 0.7;">
+							<div class="text-center">
+								<div class="text-3xl md:text-4xl font-bold mb-1" style="color: #B87761; font-family: 'Playfair Display', serif;">24/7</div>
+								<div class="text-sm" style="color: #F8F4F0;">Coverage</div>
+							</div>
+							<div class="text-center">
+								<div class="text-3xl md:text-4xl font-bold mb-1" style="color: #B87761; font-family: 'Playfair Display', serif;">200+</div>
+								<div class="text-sm" style="color: #F8F4F0;">Expert Chatters</div>
+							</div>
+							<div class="text-center">
+								<div class="text-3xl md:text-4xl font-bold mb-1" style="color: #B87761; font-family: 'Playfair Display', serif;">98%</div>
+								<div class="text-sm" style="color: #F8F4F0;">Satisfaction Rate</div>
+							</div>
+						</div>
+					</ScrollAnimation>
+				</div>
 			</div>
 		</section>
 
-		<!-- Features Section -->
-		<section id="features" class="py-24 bg-white">
-			<div class="max-w-6xl mx-auto px-6">
-				<ScrollAnimation animation="fadeIn">
-					<h2 class="text-5xl font-bold text-center text-gray-900 mb-16">
-						Amazing Features
-					</h2>
-				</ScrollAnimation>
-
-				<div class="grid md:grid-cols-3 gap-12">
-					<ScrollAnimation animation="slideLeft" delay={0.1}>
-						<div class="text-center p-8 rounded-lg hover:shadow-xl transition">
-							<div class="text-5xl mb-4">🚀</div>
-							<h3 class="text-2xl font-bold mb-4">Lightning Fast</h3>
-							<p class="text-gray-600">Built with Astro for optimal performance and SEO</p>
+		<!-- Stats Section -->
+		<section class="bg-burgundy section">
+			<div class="container max-w-6xl mx-auto px-6">
+				<div class="grid md:grid-cols-3 gap-12 text-center">
+					<ScrollAnimation animation="slideUp" delay={0.1}>
+						<div>
+							<div class="text-5xl md:text-6xl font-bold mb-4" style="color: #B87761; font-family: 'Playfair Display', serif;">
+								$20M+
+							</div>
+							<h3 class="text-xl font-semibold mb-2" style="color: white;">
+								Revenue Generated
+							</h3>
+							<p style="color: #F8F4F0; opacity: 0.9;">
+								For our creators and agency partners since inception
+							</p>
 						</div>
 					</ScrollAnimation>
 
 					<ScrollAnimation animation="slideUp" delay={0.2}>
-						<div class="text-center p-8 rounded-lg hover:shadow-xl transition">
-							<div class="text-5xl mb-4">🎨</div>
-							<h3 class="text-2xl font-bold mb-4">Beautiful Design</h3>
-							<p class="text-gray-600">Styled with Tailwind CSS for modern aesthetics</p>
+						<div>
+							<div class="text-5xl md:text-6xl font-bold mb-4" style="color: #B87761; font-family: 'Playfair Display', serif;">
+								500K+
+							</div>
+							<h3 class="text-xl font-semibold mb-2" style="color: white;">
+								Messages Sent
+							</h3>
+							<p style="color: #F8F4F0; opacity: 0.9;">
+								Every month, building authentic connections at scale
+							</p>
 						</div>
 					</ScrollAnimation>
 
-					<ScrollAnimation animation="slideRight" delay={0.3}>
-						<div class="text-center p-8 rounded-lg hover:shadow-xl transition">
-							<div class="text-5xl mb-4">⚡</div>
-							<h3 class="text-2xl font-bold mb-4">Interactive</h3>
-							<p class="text-gray-600">Vue components for dynamic user experiences</p>
+					<ScrollAnimation animation="slideUp" delay={0.3}>
+						<div>
+							<div class="text-5xl md:text-6xl font-bold mb-4" style="color: #B87761; font-family: 'Playfair Display', serif;">
+								3.2x
+							</div>
+							<h3 class="text-xl font-semibold mb-2" style="color: white;">
+								Average ROI
+							</h3>
+							<p style="color: #F8F4F0; opacity: 0.9;">
+								Clients see 320% return on their investment with us
+							</p>
 						</div>
 					</ScrollAnimation>
 				</div>
 			</div>
 		</section>
 
-		<!-- Video Section -->
-		<section class="py-24 bg-gray-50">
-			<div class="max-w-6xl mx-auto px-6">
+		<!-- Services Section -->
+		<section class="section bg-light">
+			<div class="container max-w-6xl mx-auto px-6">
 				<ScrollAnimation animation="fadeIn">
-					<h2 class="text-5xl font-bold text-center text-gray-900 mb-16">
-						See It In Action
-					</h2>
-				</ScrollAnimation>
-
-				<ScrollAnimation animation="scaleUp" delay={0.2}>
-					<div class="relative rounded-2xl overflow-hidden shadow-2xl" style="padding-top: 56.25%;">
-						<div class="absolute inset-0 bg-gradient-to-br from-indigo-600 to-purple-600 flex items-center justify-center">
-							<div class="text-center text-white">
-								<div class="text-6xl mb-4">🎬</div>
-								<p class="text-xl">Your Video Here</p>
-								<p class="text-sm opacity-75 mt-2">Add a video element or embed</p>
-							</div>
-						</div>
+					<div class="text-center mb-16">
+						<h2 class="heading-lg mb-4" style="font-family: 'Playfair Display', serif; color: #121212;">
+							Premium Services
+						</h2>
+						<p class="text-xl" style="color: #3D3D3D; opacity: 0.8;">
+							White-glove service tailored to your unique needs
+						</p>
 					</div>
 				</ScrollAnimation>
-			</div>
-		</section>
 
-		<!-- Pricing Calculator Section -->
-		<section class="py-24 bg-white">
-			<div class="max-w-4xl mx-auto px-6">
-				<ScrollAnimation animation="fadeIn">
-					<h2 class="text-5xl font-bold text-center text-gray-900 mb-8">
-						Calculate Your Price
-					</h2>
-					<p class="text-xl text-center text-gray-600 mb-16">
-						See how affordable our solution is for your needs
-					</p>
-				</ScrollAnimation>
-
-				<ScrollAnimation animation="slideUp" delay={0.3}>
-					<PricingCalculator client:visible />
-				</ScrollAnimation>
-			</div>
-		</section>
-
-		<!-- Slideout Panels Demo -->
-		<section class="py-24 bg-gray-900 text-white">
-			<div class="max-w-6xl mx-auto px-6">
-				<ScrollAnimation animation="fadeIn">
-					<h2 class="text-5xl font-bold text-center mb-16">
-						More Amazing Content
-					</h2>
-				</ScrollAnimation>
-
-				<div class="grid md:grid-cols-2 gap-12">
-					<ScrollAnimation animation="slideLeft">
-						<div class="bg-gray-800 p-8 rounded-lg">
-							<h3 class="text-3xl font-bold mb-4">Feature One</h3>
-							<p class="text-gray-300 mb-6">
-								This content slides in from the left as you scroll down the page.
-								Perfect for showcasing key features and benefits.
+				<div class="grid md:grid-cols-3 gap-8">
+					<ScrollAnimation animation="slideUp" delay={0.1}>
+						<div class="card text-center">
+							<div class="text-5xl mb-6">💬</div>
+							<h3 class="card-title text-center">
+								24/7 Chat Management
+							</h3>
+							<p class="card-content">
+								Round-the-clock coverage from expert chatters who understand your brand voice and audience psychology.
 							</p>
-							<a href="#" class="text-indigo-400 hover:text-indigo-300">Learn more →</a>
+							<div class="card-footer">
+								<a href="#contact" class="link">Learn more →</a>
+							</div>
+						</div>
+					</ScrollAnimation>
+
+					<ScrollAnimation animation="slideUp" delay={0.2}>
+						<div class="card text-center">
+							<div class="text-5xl mb-6">🎯</div>
+							<h3 class="card-title text-center">
+								Strategic Upselling
+							</h3>
+							<p class="card-content">
+								Trained professionals who know exactly when and how to move conversations toward premium content and tips.
+							</p>
+							<div class="card-footer">
+								<a href="#contact" class="link">Learn more →</a>
+							</div>
+						</div>
+					</ScrollAnimation>
+
+					<ScrollAnimation animation="slideUp" delay={0.3}>
+						<div class="card text-center">
+							<div class="text-5xl mb-6">👤</div>
+							<h3 class="card-title text-center">
+								Dedicated Manager
+							</h3>
+							<p class="card-content">
+								Every client receives a personal account manager who understands your goals and optimizes your strategy.
+							</p>
+							<div class="card-footer">
+								<a href="#contact" class="link">Learn more →</a>
+							</div>
+						</div>
+					</ScrollAnimation>
+
+					<ScrollAnimation animation="slideUp" delay={0.4}>
+						<div class="card text-center">
+							<div class="text-5xl mb-6">📊</div>
+							<h3 class="card-title text-center">
+								Analytics & Insights
+							</h3>
+							<p class="card-content">
+								Detailed reporting on engagement, conversion rates, and revenue metrics to track your growth.
+							</p>
+							<div class="card-footer">
+								<a href="#contact" class="link">Learn more →</a>
+							</div>
+						</div>
+					</ScrollAnimation>
+
+					<ScrollAnimation animation="slideUp" delay={0.5}>
+						<div class="card text-center">
+							<div class="text-5xl mb-6">🎓</div>
+							<h3 class="card-title text-center">
+								Brand Training
+							</h3>
+							<p class="card-content">
+								We study your personality, content style, and audience to ensure seamless, authentic conversations.
+							</p>
+							<div class="card-footer">
+								<a href="#contact" class="link">Learn more →</a>
+							</div>
+						</div>
+					</ScrollAnimation>
+
+					<ScrollAnimation animation="slideUp" delay={0.6}>
+						<div class="card text-center">
+							<div class="text-5xl mb-6">🔒</div>
+							<h3 class="card-title text-center">
+								Total Discretion
+							</h3>
+							<p class="card-content">
+								Bank-level security, NDAs, and complete confidentiality. Your privacy is our highest priority.
+							</p>
+							<div class="card-footer">
+								<a href="#contact" class="link">Learn more →</a>
+							</div>
+						</div>
+					</ScrollAnimation>
+				</div>
+			</div>
+		</section>
+
+		<!-- How It Works Section -->
+		<section id="how-it-works" class="bg-pearl section">
+			<div class="container max-w-5xl mx-auto px-6">
+				<ScrollAnimation animation="fadeIn">
+					<div class="text-center mb-16">
+						<h2 class="heading-lg mb-4" style="font-family: 'Playfair Display', serif; color: #121212;">
+							How It Works
+						</h2>
+						<p class="text-xl" style="color: #3D3D3D; opacity: 0.8;">
+							From onboarding to optimization, we make it seamless
+						</p>
+					</div>
+				</ScrollAnimation>
+
+				<div class="space-y-12">
+					<ScrollAnimation animation="slideLeft">
+						<div class="flex flex-col md:flex-row gap-8 items-center">
+							<div class="flex-shrink-0">
+								<div class="w-20 h-20 rounded-full flex items-center justify-center text-3xl font-bold" style="background: #7C1D3C; color: white; font-family: 'Playfair Display', serif;">
+									1
+								</div>
+							</div>
+							<div class="flex-1">
+								<h3 class="text-2xl font-bold mb-3" style="color: #121212; font-family: 'Playfair Display', serif;">
+									Discovery Call
+								</h3>
+								<p class="text-lg" style="color: #3D3D3D; line-height: 1.7;">
+									We learn about your brand, audience, goals, and unique voice. This 30-minute call helps us understand exactly what success looks like for you.
+								</p>
+							</div>
 						</div>
 					</ScrollAnimation>
 
 					<ScrollAnimation animation="slideRight">
-						<div class="bg-gray-800 p-8 rounded-lg">
-							<h3 class="text-3xl font-bold mb-4">Feature Two</h3>
-							<p class="text-gray-300 mb-6">
-								This content slides in from the right, creating a dynamic and engaging
-								experience as users explore your site.
-							</p>
-							<a href="#" class="text-indigo-400 hover:text-indigo-300">Learn more →</a>
+						<div class="flex flex-col md:flex-row gap-8 items-center">
+							<div class="flex-shrink-0 md:order-2">
+								<div class="w-20 h-20 rounded-full flex items-center justify-center text-3xl font-bold" style="background: #7C1D3C; color: white; font-family: 'Playfair Display', serif;">
+									2
+								</div>
+							</div>
+							<div class="flex-1 md:text-right">
+								<h3 class="text-2xl font-bold mb-3" style="color: #121212; font-family: 'Playfair Display', serif;">
+									Team Training
+								</h3>
+								<p class="text-lg" style="color: #3D3D3D; line-height: 1.7;">
+									Our chatters study your content, personality, and audience demographics. We create a custom playbook for your account to ensure authentic interactions.
+								</p>
+							</div>
+						</div>
+					</ScrollAnimation>
+
+					<ScrollAnimation animation="slideLeft">
+						<div class="flex flex-col md:flex-row gap-8 items-center">
+							<div class="flex-shrink-0">
+								<div class="w-20 h-20 rounded-full flex items-center justify-center text-3xl font-bold" style="background: #7C1D3C; color: white; font-family: 'Playfair Display', serif;">
+									3
+								</div>
+							</div>
+							<div class="flex-1">
+								<h3 class="text-2xl font-bold mb-3" style="color: #121212; font-family: 'Playfair Display', serif;">
+									Seamless Handoff
+								</h3>
+								<p class="text-lg" style="color: #3D3D3D; line-height: 1.7;">
+									We integrate with your OnlyFans account and begin handling chats. You maintain full oversight and can jump in anytime you want.
+								</p>
+							</div>
+						</div>
+					</ScrollAnimation>
+
+					<ScrollAnimation animation="slideRight">
+						<div class="flex flex-col md:flex-row gap-8 items-center">
+							<div class="flex-shrink-0 md:order-2">
+								<div class="w-20 h-20 rounded-full flex items-center justify-center text-3xl font-bold" style="background: #7C1D3C; color: white; font-family: 'Playfair Display', serif;">
+									4
+								</div>
+							</div>
+							<div class="flex-1 md:text-right">
+								<h3 class="text-2xl font-bold mb-3" style="color: #121212; font-family: 'Playfair Display', serif;">
+									Continuous Optimization
+								</h3>
+								<p class="text-lg" style="color: #3D3D3D; line-height: 1.7;">
+									Weekly strategy calls, monthly performance reviews, and ongoing refinement. We're always testing, learning, and improving your results.
+								</p>
+							</div>
 						</div>
 					</ScrollAnimation>
 				</div>
 			</div>
 		</section>
 
-		<!-- Call to Action -->
-		<section class="py-24 bg-gradient-to-br from-indigo-600 to-purple-600 text-white">
-			<div class="max-w-4xl mx-auto px-6 text-center">
+		<!-- Social Proof Section -->
+		<section class="section bg-light">
+			<div class="container max-w-6xl mx-auto px-6">
+				<ScrollAnimation animation="fadeIn">
+					<div class="text-center mb-16">
+						<h2 class="heading-lg mb-4" style="font-family: 'Playfair Display', serif; color: #121212;">
+							Trusted by Elite Creators
+						</h2>
+						<p class="text-xl" style="color: #3D3D3D; opacity: 0.8;">
+							See what our clients have to say
+						</p>
+					</div>
+				</ScrollAnimation>
+
+				<div class="grid md:grid-cols-2 gap-8">
+					<ScrollAnimation animation="slideUp" delay={0.1}>
+						<div class="card" style="background: white;">
+							<div class="flex items-start gap-4 mb-4">
+								<div class="w-12 h-12 rounded-full flex items-center justify-center text-2xl" style="background: #F8F4F0;">
+									👑
+								</div>
+								<div>
+									<h4 class="font-bold text-lg" style="color: #121212;">Top 0.1% Creator</h4>
+									<p class="text-sm" style="color: #3D3D3D; opacity: 0.7;">Agency with 50+ creators</p>
+								</div>
+							</div>
+							<p class="card-content mb-4" style="font-style: italic;">
+								"FlirtHaus transformed our operation. Their chatters are so good, our fans can't tell the difference. Revenue up 280% in 6 months."
+							</p>
+							<div class="flex gap-1">
+								<span style="color: #B87761;">⭐⭐⭐⭐⭐</span>
+							</div>
+						</div>
+					</ScrollAnimation>
+
+					<ScrollAnimation animation="slideUp" delay={0.2}>
+						<div class="card" style="background: white;">
+							<div class="flex items-start gap-4 mb-4">
+								<div class="w-12 h-12 rounded-full flex items-center justify-center text-2xl" style="background: #F8F4F0;">
+									💎
+								</div>
+								<div>
+									<h4 class="font-bold text-lg" style="color: #121212;">Rising Star Creator</h4>
+									<p class="text-sm" style="color: #3D3D3D; opacity: 0.7;">Top 1% in 3 months</p>
+								</div>
+							</div>
+							<p class="card-content mb-4" style="font-style: italic;">
+								"I was drowning in DMs. FlirtHaus gave me my life back while doubling my income. Worth every penny."
+							</p>
+							<div class="flex gap-1">
+								<span style="color: #B87761;">⭐⭐⭐⭐⭐</span>
+							</div>
+						</div>
+					</ScrollAnimation>
+
+					<ScrollAnimation animation="slideUp" delay={0.3}>
+						<div class="card" style="background: white;">
+							<div class="flex items-start gap-4 mb-4">
+								<div class="w-12 h-12 rounded-full flex items-center justify-center text-2xl" style="background: #F8F4F0;">
+									🚀
+								</div>
+								<div>
+									<h4 class="font-bold text-lg" style="color: #121212;">Management Agency</h4>
+									<p class="text-sm" style="color: #3D3D3D; opacity: 0.7;">Managing 30+ creators</p>
+								</div>
+							</div>
+							<p class="card-content mb-4" style="font-style: italic;">
+								"We tried 3 other chatting services before FlirtHaus. None came close to their professionalism and results. They're the real deal."
+							</p>
+							<div class="flex gap-1">
+								<span style="color: #B87761;">⭐⭐⭐⭐⭐</span>
+							</div>
+						</div>
+					</ScrollAnimation>
+
+					<ScrollAnimation animation="slideUp" delay={0.4}>
+						<div class="card" style="background: white;">
+							<div class="flex items-start gap-4 mb-4">
+								<div class="w-12 h-12 rounded-full flex items-center justify-center text-2xl" style="background: #F8F4F0;">
+									✨
+								</div>
+								<div>
+									<h4 class="font-bold text-lg" style="color: #121212;">Content Creator</h4>
+									<p class="text-sm" style="color: #3D3D3D; opacity: 0.7;">$100K+ monthly revenue</p>
+								</div>
+							</div>
+							<p class="card-content mb-4" style="font-style: italic;">
+								"The difference between FlirtHaus and everyone else? They actually care about the craft. It shows in every conversation."
+							</p>
+							<div class="flex gap-1">
+								<span style="color: #B87761;">⭐⭐⭐⭐⭐</span>
+							</div>
+						</div>
+					</ScrollAnimation>
+				</div>
+			</div>
+		</section>
+
+		<!-- CTA Section -->
+		<section id="contact" class="bg-primary section">
+			<div class="container max-w-4xl mx-auto px-6 text-center">
 				<ScrollAnimation animation="scaleUp">
-					<h2 class="text-5xl font-bold mb-6">
-						Ready to Get Started?
+					<h2 class="heading-lg mb-6" style="color: white; font-family: 'Playfair Display', serif;">
+						Ready to Scale Your OnlyFans?
 					</h2>
-					<p class="text-xl mb-8 opacity-90">
-						Join thousands of satisfied customers today
+					<p class="text-xl mb-12" style="color: #F8F4F0; line-height: 1.7;">
+						Join the elite creators and agencies who trust FlirtHaus with their most valuable asset—their relationships with fans.
 					</p>
-					<a href="#" class="inline-block bg-white text-indigo-600 px-8 py-4 rounded-lg text-lg font-semibold hover:bg-gray-100 transition">
-						Start Free Trial
-					</a>
+					<div class="flex flex-col sm:flex-row gap-4 justify-center items-center mb-8">
+						<a href="mailto:hello@flirthaus.com" class="btn btn-primary btn-lg">
+							Schedule Discovery Call
+						</a>
+						<a href="#how-it-works" class="btn btn-secondary btn-lg">
+							Learn More
+						</a>
+					</div>
+					<p class="text-sm" style="color: #F8F4F0; opacity: 0.7;">
+						No long-term contracts. Cancel anytime. 14-day money-back guarantee.
+					</p>
 				</ScrollAnimation>
 			</div>
 		</section>
 
+		<!-- Why Choose Us Section -->
+		<section class="bg-pearl section-sm">
+			<div class="container max-w-6xl mx-auto px-6">
+				<div class="grid md:grid-cols-3 gap-8 text-center">
+					<div>
+						<div class="text-3xl mb-3">🔒</div>
+						<h4 class="font-bold mb-2" style="color: #121212;">Bank-Level Security</h4>
+						<p class="text-sm" style="color: #3D3D3D; opacity: 0.8;">Your data and privacy are our top priority</p>
+					</div>
+					<div>
+						<div class="text-3xl mb-3">💼</div>
+						<h4 class="font-bold mb-2" style="color: #121212;">Proven Track Record</h4>
+						<p class="text-sm" style="color: #3D3D3D; opacity: 0.8;">$20M+ generated for our clients</p>
+					</div>
+					<div>
+						<div class="text-3xl mb-3">🎯</div>
+						<h4 class="font-bold mb-2" style="color: #121212;">Results Guaranteed</h4>
+						<p class="text-sm" style="color: #3D3D3D; opacity: 0.8;">14-day money-back guarantee</p>
+					</div>
+				</div>
+			</div>
+		</section>
+
 		<Footer />
-		<AnimationTest />
 	</body>
 </html>
