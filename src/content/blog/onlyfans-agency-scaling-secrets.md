@@ -2,7 +2,6 @@
 title: 'How OnlyFans Agencies Scale from 5 to 50 Creators (Without Burning Out)'
 description: 'The operational playbook that top agencies use to manage dozens of creators while maintaining quality and maximizing revenue per creator.'
 pubDate: 2024-12-05
-heroImage: '/placeholder-blog-3.jpg'
 ---
 
 Managing 5 OnlyFans creators is hard. Managing 50 feels impossible.
