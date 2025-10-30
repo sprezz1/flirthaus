@@ -1,0 +1,120 @@
+---
+/**
+ * ScrollAnimation Component
+ * Wraps content with scroll-triggered animations using GSAP
+ *
+ * Props:
+ * - animation: Type of animation (fadeIn, slideLeft, slideRight, slideUp, scaleUp)
+ * - delay: Animation delay in seconds (optional)
+ * - duration: Animation duration in seconds (optional, default: 1)
+ */
+
+interface Props {
+  animation?: 'fadeIn' | 'slideLeft' | 'slideRight' | 'slideUp' | 'scaleUp';
+  delay?: number;
+  duration?: number;
+  class?: string;
+}
+
+const {
+  animation = 'fadeIn',
+  delay = 0,
+  duration = 1,
+  class: className = ''
+} = Astro.props;
+
+// Generate unique ID for this animation element
+const uniqueId = `scroll-anim-${Math.random().toString(36).substr(2, 9)}`;
+---
+
+<div
+  id={uniqueId}
+  class={`scroll-animation ${className}`}
+  data-animation={animation}
+  data-delay={delay}
+  data-duration={duration}
+>
+  <slot />
+</div>
+
+<script>
+  import gsap from 'gsap';
+  import { ScrollTrigger } from 'gsap/ScrollTrigger';
+
+  // Register ScrollTrigger plugin
+  gsap.registerPlugin(ScrollTrigger);
+
+  // Function to initialize animations
+  function initScrollAnimations() {
+    const elements = document.querySelectorAll('.scroll-animation');
+
+    elements.forEach((element) => {
+      // Skip if already initialized
+      if (element.getAttribute('data-animated')) return;
+      element.setAttribute('data-animated', 'true');
+
+      const animation = element.getAttribute('data-animation') || 'fadeIn';
+      const delay = parseFloat(element.getAttribute('data-delay') || '0');
+      const duration = parseFloat(element.getAttribute('data-duration') || '1');
+
+      // Define initial states for different animations
+      const animations: Record<string, gsap.TweenVars> = {
+        fadeIn: {
+          opacity: 0,
+          y: 30
+        },
+        slideLeft: {
+          opacity: 0,
+          x: -100
+        },
+        slideRight: {
+          opacity: 0,
+          x: 100
+        },
+        slideUp: {
+          opacity: 0,
+          y: 100
+        },
+        scaleUp: {
+          opacity: 0,
+          scale: 0.8
+        }
+      };
+
+      // Set initial state
+      gsap.set(element, animations[animation]);
+
+      // Create scroll-triggered animation
+      gsap.to(element, {
+        scrollTrigger: {
+          trigger: element,
+          start: 'top 80%',
+          toggleActions: 'play none none reverse',
+        },
+        opacity: 1,
+        x: 0,
+        y: 0,
+        scale: 1,
+        duration: duration,
+        delay: delay,
+        ease: 'power2.out'
+      });
+    });
+  }
+
+  // Initialize on both page load events
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', initScrollAnimations);
+  } else {
+    initScrollAnimations();
+  }
+
+  // Also listen for Astro's page load event (for view transitions)
+  document.addEventListener('astro:page-load', initScrollAnimations);
+</script>
+
+<style>
+  .scroll-animation {
+    will-change: transform, opacity;
+  }
+</style>

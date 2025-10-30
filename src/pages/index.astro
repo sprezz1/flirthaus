@@ -1,0 +1,173 @@
+---
+import BaseHead from '../components/BaseHead.astro';
+import Footer from '../components/Footer.astro';
+import Header from '../components/Header.astro';
+import ScrollAnimation from '../components/ScrollAnimation.astro';
+import AnimationTest from '../components/AnimationTest.astro';
+import PricingCalculator from '../components/PricingCalculator.vue';
+import { SITE_DESCRIPTION, SITE_TITLE } from '../consts';
+---
+
+<!doctype html>
+<html lang="en">
+	<head>
+		<BaseHead title={SITE_TITLE} description={SITE_DESCRIPTION} />
+	</head>
+	<body class="bg-white">
+		<Header />
+
+		<!-- Hero Section -->
+		<section class="min-h-screen flex items-center justify-center bg-gradient-to-br from-blue-50 to-indigo-100">
+			<div class="max-w-4xl mx-auto px-6 text-center">
+				<ScrollAnimation animation="fadeIn">
+					<h1 class="text-6xl font-bold text-gray-900 mb-6">
+						Welcome to Your Marketing Site
+					</h1>
+				</ScrollAnimation>
+				<ScrollAnimation animation="fadeIn" delay={0.3}>
+					<p class="text-xl text-gray-600 mb-8">
+						Showcase your product with stunning scroll animations and interactive features
+					</p>
+				</ScrollAnimation>
+				<ScrollAnimation animation="scaleUp" delay={0.6}>
+					<a href="#features" class="inline-block bg-indigo-600 text-white px-8 py-4 rounded-lg text-lg font-semibold hover:bg-indigo-700 transition">
+						Get Started
+					</a>
+				</ScrollAnimation>
+			</div>
+		</section>
+
+		<!-- Features Section -->
+		<section id="features" class="py-24 bg-white">
+			<div class="max-w-6xl mx-auto px-6">
+				<ScrollAnimation animation="fadeIn">
+					<h2 class="text-5xl font-bold text-center text-gray-900 mb-16">
+						Amazing Features
+					</h2>
+				</ScrollAnimation>
+
+				<div class="grid md:grid-cols-3 gap-12">
+					<ScrollAnimation animation="slideLeft" delay={0.1}>
+						<div class="text-center p-8 rounded-lg hover:shadow-xl transition">
+							<div class="text-5xl mb-4">🚀</div>
+							<h3 class="text-2xl font-bold mb-4">Lightning Fast</h3>
+							<p class="text-gray-600">Built with Astro for optimal performance and SEO</p>
+						</div>
+					</ScrollAnimation>
+
+					<ScrollAnimation animation="slideUp" delay={0.2}>
+						<div class="text-center p-8 rounded-lg hover:shadow-xl transition">
+							<div class="text-5xl mb-4">🎨</div>
+							<h3 class="text-2xl font-bold mb-4">Beautiful Design</h3>
+							<p class="text-gray-600">Styled with Tailwind CSS for modern aesthetics</p>
+						</div>
+					</ScrollAnimation>
+
+					<ScrollAnimation animation="slideRight" delay={0.3}>
+						<div class="text-center p-8 rounded-lg hover:shadow-xl transition">
+							<div class="text-5xl mb-4">⚡</div>
+							<h3 class="text-2xl font-bold mb-4">Interactive</h3>
+							<p class="text-gray-600">Vue components for dynamic user experiences</p>
+						</div>
+					</ScrollAnimation>
+				</div>
+			</div>
+		</section>
+
+		<!-- Video Section -->
+		<section class="py-24 bg-gray-50">
+			<div class="max-w-6xl mx-auto px-6">
+				<ScrollAnimation animation="fadeIn">
+					<h2 class="text-5xl font-bold text-center text-gray-900 mb-16">
+						See It In Action
+					</h2>
+				</ScrollAnimation>
+
+				<ScrollAnimation animation="scaleUp" delay={0.2}>
+					<div class="relative rounded-2xl overflow-hidden shadow-2xl" style="padding-top: 56.25%;">
+						<div class="absolute inset-0 bg-gradient-to-br from-indigo-600 to-purple-600 flex items-center justify-center">
+							<div class="text-center text-white">
+								<div class="text-6xl mb-4">🎬</div>
+								<p class="text-xl">Your Video Here</p>
+								<p class="text-sm opacity-75 mt-2">Add a video element or embed</p>
+							</div>
+						</div>
+					</div>
+				</ScrollAnimation>
+			</div>
+		</section>
+
+		<!-- Pricing Calculator Section -->
+		<section class="py-24 bg-white">
+			<div class="max-w-4xl mx-auto px-6">
+				<ScrollAnimation animation="fadeIn">
+					<h2 class="text-5xl font-bold text-center text-gray-900 mb-8">
+						Calculate Your Price
+					</h2>
+					<p class="text-xl text-center text-gray-600 mb-16">
+						See how affordable our solution is for your needs
+					</p>
+				</ScrollAnimation>
+
+				<ScrollAnimation animation="slideUp" delay={0.3}>
+					<PricingCalculator client:visible />
+				</ScrollAnimation>
+			</div>
+		</section>
+
+		<!-- Slideout Panels Demo -->
+		<section class="py-24 bg-gray-900 text-white">
+			<div class="max-w-6xl mx-auto px-6">
+				<ScrollAnimation animation="fadeIn">
+					<h2 class="text-5xl font-bold text-center mb-16">
+						More Amazing Content
+					</h2>
+				</ScrollAnimation>
+
+				<div class="grid md:grid-cols-2 gap-12">
+					<ScrollAnimation animation="slideLeft">
+						<div class="bg-gray-800 p-8 rounded-lg">
+							<h3 class="text-3xl font-bold mb-4">Feature One</h3>
+							<p class="text-gray-300 mb-6">
+								This content slides in from the left as you scroll down the page.
+								Perfect for showcasing key features and benefits.
+							</p>
+							<a href="#" class="text-indigo-400 hover:text-indigo-300">Learn more →</a>
+						</div>
+					</ScrollAnimation>
+
+					<ScrollAnimation animation="slideRight">
+						<div class="bg-gray-800 p-8 rounded-lg">
+							<h3 class="text-3xl font-bold mb-4">Feature Two</h3>
+							<p class="text-gray-300 mb-6">
+								This content slides in from the right, creating a dynamic and engaging
+								experience as users explore your site.
+							</p>
+							<a href="#" class="text-indigo-400 hover:text-indigo-300">Learn more →</a>
+						</div>
+					</ScrollAnimation>
+				</div>
+			</div>
+		</section>
+
+		<!-- Call to Action -->
+		<section class="py-24 bg-gradient-to-br from-indigo-600 to-purple-600 text-white">
+			<div class="max-w-4xl mx-auto px-6 text-center">
+				<ScrollAnimation animation="scaleUp">
+					<h2 class="text-5xl font-bold mb-6">
+						Ready to Get Started?
+					</h2>
+					<p class="text-xl mb-8 opacity-90">
+						Join thousands of satisfied customers today
+					</p>
+					<a href="#" class="inline-block bg-white text-indigo-600 px-8 py-4 rounded-lg text-lg font-semibold hover:bg-gray-100 transition">
+						Start Free Trial
+					</a>
+				</ScrollAnimation>
+			</div>
+		</section>
+
+		<Footer />
+		<AnimationTest />
+	</body>
+</html>
